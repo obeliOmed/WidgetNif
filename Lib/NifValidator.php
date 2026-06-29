@@ -58,6 +58,14 @@ class NifValidator
             return 'cif';
         }
 
+        // Structurally matches CIF (letter + 7 digits + CIF-valid control char) but with an
+        // invalid entity letter (e.g. 'O' instead of '0'). Return 'unknown' to avoid
+        // misclassifying a likely typo as a passport.
+        if (preg_match('/^[A-Z][0-9]{7}[0-9A-J]$/', $v)
+            && !preg_match('/^[ABCDEFGHJKLMNPQRSUVW]/', $v)) {
+            return 'unknown';
+        }
+
         if (preg_match('/^[A-Z0-9]{6,12}$/', $v)) {
             return 'passport';
         }
