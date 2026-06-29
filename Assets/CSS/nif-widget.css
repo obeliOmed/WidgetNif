@@ -1,0 +1,9 @@
+/* WidgetNif — feedback badge styles */
+
+/* Ensure consistent sizing with Bootstrap input-group-text. */
+.nif-feedback-badge {
+    font-size: 0.85rem;
+    min-width: 3rem;
+    text-align: center;
+    user-select: none;
+}
