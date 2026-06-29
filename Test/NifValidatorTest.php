@@ -210,28 +210,28 @@ class NifValidatorTest extends TestCase
     public static function cifAlwaysLetterProvider(): array
     {
         // Entity P, Q, K, L, M, S → control must be letter.
-        // digits 1234567: control_num = 4, control_letter = CIF_CONTROL_LETTERS[4] = 'E'.
+        // digits 1234567: control_num = 4, control_letter = 'JABCDEFGHI'[4] = 'D'.
         return [
-            ['P1234567E'],
-            ['Q1234567E'],
-            ['K1234567E'],
-            ['L1234567E'],
-            ['M1234567E'],
-            ['S1234567E'],
+            ['P1234567D'],
+            ['Q1234567D'],
+            ['K1234567D'],
+            ['L1234567D'],
+            ['M1234567D'],
+            ['S1234567D'],
         ];
     }
 
     public function testCifEntityAcceptsBothLetterAndDigit(): void
     {
-        // Entity C (always-either): digits 1234567, control_num=4, letter='E', digit='4'
-        $this->assertTrue(NifValidator::validateCif('C1234567E'));
+        // Entity C (always-either): digits 1234567, control_num=4, letter='D', digit='4'.
+        $this->assertTrue(NifValidator::validateCif('C1234567D'));
         $this->assertTrue(NifValidator::validateCif('C12345674'));
     }
 
     public function testCifAlwaysDigitRejectsLetter(): void
     {
-        // Entity A must use digit '4', not letter 'E'
-        $this->assertFalse(NifValidator::validateCif('A1234567E'));
+        // Entity A must use digit '4', not letter 'D'
+        $this->assertFalse(NifValidator::validateCif('A1234567D'));
     }
 
     public function testCifAlwaysLetterRejectsDigit(): void
