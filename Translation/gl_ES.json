@@ -1,0 +1,8 @@
+{
+    "nif": "NIF / NIE / CIF",
+    "nif-validation-error": "O número de identificación fiscal non é válido",
+    "nif-type-nif": "NIF",
+    "nif-type-nie": "NIE",
+    "nif-type-cif": "CIF",
+    "nif-type-passport": "Pasaporte"
+}
