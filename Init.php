@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace FacturaScripts\Plugins\WidgetNif;
 
-use FacturaScripts\Core\Base\InitClass;
+use FacturaScripts\Core\Template\InitClass;
 
 /**
  * Plugin initializer. Widget is auto-discovered by FacturaScripts via ColumnItem.php — no
