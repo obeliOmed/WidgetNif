@@ -1,5 +1,5 @@
 {
-    "name": "obeliomed/facturascripts-widget-nif",
+    "name": "obeliomed/widget-nif",
     "description": "Spanish NIF/NIE/CIF validator widget for FacturaScripts forms",
     "type": "library",
     "license": "GPL-3.0-only",
